@@ -22,14 +22,26 @@
     cursor: pointer;
   }
   
-  /* Animated Man Sprite */
-  .animated-man {
+  /* Animated Man Sprite — replaced with solid red box */
+.animated-man {
     position: absolute;
-    background: url("https://i.imgur.com/jXxJwBq.png");
-    background-size: 168px 42px;
-    filter: drop-shadow(0 0 8px cyan);
-    animation: fly-cycle 0.4s steps(4) infinite;
+  
+    /* Remove background sprite */
+    background: red !important;
+    background-image: none !important;
+  
+    /* Make the red box visible and sharp */
+    width: 42px;
+    height: 42px;
+  
+    border-radius: 6px;
+    box-shadow: 0 0 12px rgba(255, 50, 50, 0.8);
+  
+    /* Remove the sprite animation */
+    animation: none !important;
+    filter: none !important;
   }
+  
   
   /* Animation frames */
   @keyframes fly-cycle {
