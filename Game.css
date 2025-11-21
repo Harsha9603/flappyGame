@@ -1,83 +1,76 @@
 /* ===========================
-   CYBER ARCADE GAME THEME 
+   CYBER ARCADE THEME
    =========================== */
 
-   .game-wrapper {
+/* Wrapper */
+.game-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
   }
   
-  /* Game container */
+  /* Game Area */
   .game {
     position: relative;
     background: linear-gradient(135deg, #09121a 0%, #0b1b2b 100%);
     border-radius: 20px;
     overflow: hidden;
-  
-    border: 2px solid rgba(0, 255, 255, 0.3);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4),
-      inset 0 0 30px rgba(0, 255, 255, 0.2);
+    border: 2px solid rgba(0, 255, 255, 0.35);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.4),
+      inset 0 0 40px rgba(0, 255, 255, 0.15);
     cursor: pointer;
-    width: 420px;
-    height: 500px;
   }
   
-  /* Player */
+  /* Animated Man Sprite */
   .animated-man {
     position: absolute;
-    left: 50px;
-    bottom: 120px;
-    width: 42px;
-    height: 42px;
-  
     background: url("https://i.imgur.com/jXxJwBq.png");
     background-size: 168px 42px;
-    animation: manFrames 0.35s steps(4) infinite;
-    filter: drop-shadow(0 0 10px cyan);
+    filter: drop-shadow(0 0 8px cyan);
+    animation: fly-cycle 0.4s steps(4) infinite;
   }
   
-  @keyframes manFrames {
+  /* Animation frames */
+  @keyframes fly-cycle {
     from {
-      background-position: 0;
+      background-position: 0 0;
     }
     to {
-      background-position: -168px;
+      background-position: -168px 0;
     }
   }
   
-  /* Obstacles */
+  /* Obstacles - Neon Pillars */
   .obstacle {
     position: absolute;
-    bottom: 40px;
-    background: rgba(0, 255, 170, 0.28);
+    left: 0;
+    background: rgba(0, 255, 170, 0.25);
     border: 2px solid #00ffa8;
     border-radius: 10px;
-  
-    box-shadow: 0 0 16px #00ffa8, inset 0 0 16px #00ffa8;
+    box-shadow: 0 0 12px #00ffa8, inset 0 0 12px #00ffa8;
     backdrop-filter: blur(4px);
   }
   
-  /* Ground */
+  /* Holographic Ground */
   .ground {
     position: absolute;
-    width: 100%;
-    height: 55px;
     bottom: 0;
-  
+    height: 55px;
+    width: 100%;
     background: linear-gradient(
       to right,
       rgba(0, 255, 255, 0.2),
       rgba(0, 255, 255, 0.05)
     );
-    border-top: 2px solid cyan;
+    border-top: 2px solid #00ffff;
     box-shadow: 0 0 20px cyan;
   }
   
   /* ===========================
-     NEW COOL SCORE BADGE
+     REPLACED (NEW) SCORE BADGE
      =========================== */
+  
   .score {
     position: absolute;
     top: 14px;
@@ -101,6 +94,7 @@
     animation: scoreGlow 2s ease-in-out infinite alternate;
   }
   
+  /* Glow animation */
   @keyframes scoreGlow {
     from {
       box-shadow: 0 0 10px #00eaff, inset 0 0 6px rgba(0, 255, 255, 0.3);
@@ -111,39 +105,45 @@
   }
   
   /* ===========================
-     OVERLAY
+     OVERLAY PANEL
      =========================== */
+  
   .overlay {
     position: absolute;
     inset: 0;
-  
-    background: rgba(3, 20, 33, 0.75);
-    backdrop-filter: blur(8px);
+    background: rgba(4, 19, 34, 0.75);
+    backdrop-filter: blur(10px);
   
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   
-    color: #a8faff;
-    text-shadow: 0 0 16px cyan;
+    color: #b9faff;
+    text-shadow: 0 0 10px cyan;
   }
   
   .overlay button {
-    margin-top: 14px;
-    background: linear-gradient(90deg, #00eaff, #00ffa7);
-    padding: 10px 24px;
-    border-radius: 50px;
+    margin-top: 16px;
+    background: linear-gradient(90deg, #00f6ff, #05ffa3);
+    padding: 10px 26px;
     border: none;
+    border-radius: 999px;
     font-weight: bold;
+    letter-spacing: 1px;
+    color: #00171f;
     cursor: pointer;
-    color: #00181e;
-    box-shadow: 0 0 12px #00ffa7;
     transition: 0.2s;
+    box-shadow: 0 0 12px #00faff;
   }
   
   .overlay button:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px #00ffa7;
+    box-shadow: 0 0 20px #00faff;
+  }
+  
+  /* Remove leftover best score (JSX removed but CSS cleanup) */
+  .best {
+    display: none !important;
   }
   
