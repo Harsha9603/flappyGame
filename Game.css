@@ -1,113 +1,149 @@
 /* ===========================
-   CYBER ARCADE THEME
+   CYBER ARCADE GAME THEME 
    =========================== */
 
-/* Wrapper */
-.game-wrapper {
+   .game-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
   }
   
-  /* Game Area */
+  /* Game container */
   .game {
     position: relative;
     background: linear-gradient(135deg, #09121a 0%, #0b1b2b 100%);
     border-radius: 20px;
     overflow: hidden;
-    border: 2px solid rgba(0, 255, 255, 0.35);
-    box-shadow: 0 0 40px rgba(0, 255, 255, 0.4), inset 0 0 40px rgba(0, 255, 255, 0.15);
+  
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4),
+      inset 0 0 30px rgba(0, 255, 255, 0.2);
     cursor: pointer;
+    width: 420px;
+    height: 500px;
   }
   
-  /* Animated Man Sprite (Cyber Runner) */
+  /* Player */
   .animated-man {
     position: absolute;
+    left: 50px;
+    bottom: 120px;
+    width: 42px;
+    height: 42px;
+  
     background: url("https://i.imgur.com/jXxJwBq.png");
     background-size: 168px 42px;
-    filter: drop-shadow(0 0 8px cyan);
-    animation: fly-cycle 0.4s steps(4) infinite;
+    animation: manFrames 0.35s steps(4) infinite;
+    filter: drop-shadow(0 0 10px cyan);
   }
   
-  /* Animation frames */
-  @keyframes fly-cycle {
-    from { background-position: 0 0; }
-    to   { background-position: -168px 0; }
+  @keyframes manFrames {
+    from {
+      background-position: 0;
+    }
+    to {
+      background-position: -168px;
+    }
   }
   
-  /* Obstacles - Neon Pillars */
+  /* Obstacles */
   .obstacle {
     position: absolute;
-    left: 0;
-    background: rgba(0, 255, 170, 0.25);
+    bottom: 40px;
+    background: rgba(0, 255, 170, 0.28);
     border: 2px solid #00ffa8;
     border-radius: 10px;
-    box-shadow: 0 0 12px #00ffa8, inset 0 0 12px #00ffa8;
+  
+    box-shadow: 0 0 16px #00ffa8, inset 0 0 16px #00ffa8;
     backdrop-filter: blur(4px);
   }
   
-  /* Ground - Holographic Floor */
+  /* Ground */
   .ground {
     position: absolute;
-    bottom: 0;
-    height: 55px;
     width: 100%;
-    background: linear-gradient(to right, rgba(0,255,255,0.2), rgba(0,255,255,0.05));
-    border-top: 2px solid #00ffff;
+    height: 55px;
+    bottom: 0;
+  
+    background: linear-gradient(
+      to right,
+      rgba(0, 255, 255, 0.2),
+      rgba(0, 255, 255, 0.05)
+    );
+    border-top: 2px solid cyan;
     box-shadow: 0 0 20px cyan;
   }
   
-  /* Score Display */
+  /* ===========================
+     NEW COOL SCORE BADGE
+     =========================== */
   .score {
     position: absolute;
-    top: 12px;
-    left: 12px;
-    padding: 8px 16px;
-    background: rgba(0, 10, 20, 0.6);
-    border: 1px solid #00ffff;
-    border-radius: 12px;
-    color: #00d9ff;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    box-shadow: 0 0 12px #00eaff;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+  
+    padding: 10px 26px;
+  
+    background: rgba(0, 255, 255, 0.12);
+    border: 2px solid rgba(0, 255, 255, 0.55);
+    border-radius: 30px;
+  
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: #00eaff;
+    font-weight: 700;
+  
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 16px #00eaff, inset 0 0 10px rgba(0, 255, 255, 0.3);
+  
+    animation: scoreGlow 2s ease-in-out infinite alternate;
   }
   
-  .best {
-    opacity: 0.7;
+  @keyframes scoreGlow {
+    from {
+      box-shadow: 0 0 10px #00eaff, inset 0 0 6px rgba(0, 255, 255, 0.3);
+    }
+    to {
+      box-shadow: 0 0 22px #00eaff, inset 0 0 14px rgba(0, 255, 255, 0.5);
+    }
   }
   
-  /* Overlay Panel */
+  /* ===========================
+     OVERLAY
+     =========================== */
   .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(4, 19, 34, 0.75);
-    backdrop-filter: blur(10px);
+  
+    background: rgba(3, 20, 33, 0.75);
+    backdrop-filter: blur(8px);
+  
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #b9faff;
-    text-shadow: 0 0 10px cyan;
+  
+    color: #a8faff;
+    text-shadow: 0 0 16px cyan;
   }
   
-  /* Overlay button */
   .overlay button {
-    margin-top: 16px;
-    background: linear-gradient(90deg, #00f6ff, #05ffa3);
-    padding: 10px 26px;
+    margin-top: 14px;
+    background: linear-gradient(90deg, #00eaff, #00ffa7);
+    padding: 10px 24px;
+    border-radius: 50px;
     border: none;
-    border-radius: 999px;
     font-weight: bold;
-    letter-spacing: 1px;
-    color: #00171f;
     cursor: pointer;
+    color: #00181e;
+    box-shadow: 0 0 12px #00ffa7;
     transition: 0.2s;
-    box-shadow: 0 0 12px #00faff;
   }
   
   .overlay button:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px #00faff;
+    box-shadow: 0 0 20px #00ffa7;
   }
   
