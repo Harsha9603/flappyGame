@@ -1,0 +1,113 @@
+/* ===========================
+   CYBER ARCADE THEME
+   =========================== */
+
+/* Wrapper */
+.game-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Game Area */
+  .game {
+    position: relative;
+    background: linear-gradient(135deg, #09121a 0%, #0b1b2b 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid rgba(0, 255, 255, 0.35);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.4), inset 0 0 40px rgba(0, 255, 255, 0.15);
+    cursor: pointer;
+  }
+  
+  /* Animated Man Sprite (Cyber Runner) */
+  .animated-man {
+    position: absolute;
+    background: url("https://i.imgur.com/jXxJwBq.png");
+    background-size: 168px 42px;
+    filter: drop-shadow(0 0 8px cyan);
+    animation: fly-cycle 0.4s steps(4) infinite;
+  }
+  
+  /* Animation frames */
+  @keyframes fly-cycle {
+    from { background-position: 0 0; }
+    to   { background-position: -168px 0; }
+  }
+  
+  /* Obstacles - Neon Pillars */
+  .obstacle {
+    position: absolute;
+    left: 0;
+    background: rgba(0, 255, 170, 0.25);
+    border: 2px solid #00ffa8;
+    border-radius: 10px;
+    box-shadow: 0 0 12px #00ffa8, inset 0 0 12px #00ffa8;
+    backdrop-filter: blur(4px);
+  }
+  
+  /* Ground - Holographic Floor */
+  .ground {
+    position: absolute;
+    bottom: 0;
+    height: 55px;
+    width: 100%;
+    background: linear-gradient(to right, rgba(0,255,255,0.2), rgba(0,255,255,0.05));
+    border-top: 2px solid #00ffff;
+    box-shadow: 0 0 20px cyan;
+  }
+  
+  /* Score Display */
+  .score {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 8px 16px;
+    background: rgba(0, 10, 20, 0.6);
+    border: 1px solid #00ffff;
+    border-radius: 12px;
+    color: #00d9ff;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    box-shadow: 0 0 12px #00eaff;
+  }
+  
+  .best {
+    opacity: 0.7;
+  }
+  
+  /* Overlay Panel */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 19, 34, 0.75);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #b9faff;
+    text-shadow: 0 0 10px cyan;
+  }
+  
+  /* Overlay button */
+  .overlay button {
+    margin-top: 16px;
+    background: linear-gradient(90deg, #00f6ff, #05ffa3);
+    padding: 10px 26px;
+    border: none;
+    border-radius: 999px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #00171f;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 0 12px #00faff;
+  }
+  
+  .overlay button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00faff;
+  }
+  
