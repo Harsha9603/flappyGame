@@ -1,55 +1,56 @@
 /* ===========================
-   APP UI — Cyber Neon
+   MAIN APP — NEON UI DESIGN
    =========================== */
 
    .app {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
   
     background: radial-gradient(circle at top, #00111a, #000000 70%);
-    color: #a8faff;
+    color: #9ffaff;
   
-    font-family: "Orbitron", system-ui, sans-serif;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
   
-    text-shadow: 0 0 6px rgba(0, 255, 255, 0.6);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
   }
   
-  /* Title */
   .title {
-    margin-bottom: 18px;
     font-size: 2.4rem;
     letter-spacing: 3px;
+    margin-bottom: 10px;
+  
     color: #00eaff;
-    text-shadow: 0 0 12px #00eaff, 0 0 6px #00ccff;
+    text-shadow: 0 0 18px #00eaff;
   }
   
-  /* Hint text */
   .hint {
-    margin-top: 18px;
     font-size: 1rem;
-    opacity: 0.8;
-    color: #7fe7ff;
-    text-shadow: 0 0 10px #32e2ff;
+    margin-top: 14px;
+    opacity: 0.85;
+  
+    color: #78f5ff;
+    text-shadow: 0 0 12px #00eaff;
   }
   
-  /* Add glowing buttons globally */
+  /* Global neon button style */
   button {
-    background: linear-gradient(90deg, #00f6ff, #00ffa7);
-    padding: 8px 22px;
-    border-radius: 999px;
+    background: linear-gradient(90deg, #00eaff, #00ffa7);
+    padding: 10px 26px;
     border: none;
-    color: #001017;
+    border-radius: 999px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 0 14px #00ffe7;
+    transition: 0.2s;
+    color: #00181e;
+    box-shadow: 0 0 14px #00ffa7;
   }
   
   button:hover {
     transform: scale(1.08);
-    box-shadow: 0 0 24px #00ffe7;
+    box-shadow: 0 0 22px #00ffa7;
   }
   
